@@ -9,6 +9,7 @@ import subprocess
 import torch
 from flask import Flask, jsonify, url_for, render_template, request, redirect
 
+server = app.server
 app = Flask(__name__)
 
 RESULT_FOLDER = os.path.join('./static')
