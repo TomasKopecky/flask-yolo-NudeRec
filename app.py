@@ -15,6 +15,7 @@ app = Flask(__name__)
 RESULT_FOLDER = os.path.join('./static')
 app.config['RESULT_FOLDER'] = RESULT_FOLDER
 
+print(os.getcwd())
 model = torch.hub.load('ultralytics/yolov5','custom', path='./model.pt') # 'yolov5s', pretrained=True)#.autoshape()  # for PIL/cv2/np inputs and NMS
 model.eval()
 subprocess.run(["python", "print('asfasdfasdf')"])
