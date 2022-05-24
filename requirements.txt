@@ -1,7 +1,7 @@
 Flask==1.0.3
 https://download.pytorch.org/whl/cpu/torch-1.1.0-cp37-cp37m-linux_x86_64.whl
 torchvision==0.2.1
-opencv-python
+opencv-python-headless==4.2.0.32
 numpy==1.16.4
 pillow==6.1
 gunicorn==19.9.0
