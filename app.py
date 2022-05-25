@@ -5,7 +5,7 @@ import json
 from PIL import Image
 import base64
 import subprocess
-
+import requests
 import torch
 from flask import Flask, jsonify, url_for, render_template, request, redirect
 
@@ -14,10 +14,14 @@ app = Flask(__name__)
 RESULT_FOLDER = os.path.join('./static')
 app.config['RESULT_FOLDER'] = RESULT_FOLDER
 
+URL = "https://github.com/ronadlisko/flask-yolo-NudeRec/raw/main/model/model.pt"
+response = requests.get(URL)
+open("model.pt", "wb").write(response.content)
+
 print(os.getcwd())
 model = torch.hub.load('ultralytics/yolov5','custom', path='model.pt') # 'yolov5s', pretrained=True)#.autoshape()  # for PIL/cv2/np inputs and NMS
 model.eval()
-subprocess.run(["python", "print('asfasdfasdf')"])
+#subprocess.run(["python", "print('asfasdfasdf')"])
 
 def get_prediction(img_bytes):
     img = Image.open(io.BytesIO(img_bytes))
