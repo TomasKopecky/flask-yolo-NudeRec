@@ -17,9 +17,9 @@ app.config['RESULT_FOLDER'] = RESULT_FOLDER
 
 print(os.getcwd())
 
-URL = "https://github.com/ronadlisko/flask-yolo-NudeRec/raw/main/model/model.pt"
-response = requests.get(URL)
-open("model.pt", "wb").write(response.content)
+#URL = "https://github.com/ronadlisko/flask-yolo-NudeRec/raw/main/model/model.pt"
+#response = requests.get(URL)
+#open("model.pt", "wb").write(response.content)
 
 model = torch.hub.load('ultralytics/yolov5','custom', path='model.pt', force_reload=True).autoshape() # 'yolov5s', pretrained=True)#.autoshape()  # for PIL/cv2/np inputs and NMS
 model.eval()
