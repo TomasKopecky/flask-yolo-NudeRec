@@ -1,7 +1,6 @@
 import io
 import os
 
-import torch
 from flask import Flask, jsonify, url_for, render_template, request, redirect
 
 app = Flask(__name__)
